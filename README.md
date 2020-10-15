@@ -5,7 +5,7 @@ The infrastructure is built around VirtualBox version 6. VirtualBox can be obtai
 
 The following drawing provides an overview of the virtual infrastructure to be instantiated.
 
-![Network Overview]https://github.com/peterheinrich/ITS-Firewalling-Demo-Environment/blob/main/overview.png)
+![Network Overview](https://github.com/peterheinrich/ITS-Firewalling-Demo-Environment/blob/main/overview.png)
 
 ## Windows Users
 You need to add the installation directory of VirtualBox to your path variable. 
