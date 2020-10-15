@@ -1,4 +1,5 @@
-# VB_Virtual_Company
+# ITS-Firewalling-Demo-Environment
+
 Welcome to this small collection of scripts to provision a demo environment consisting of bunch of network hosts to experiment with various firewalling, proxy and filtering techniques.
 
 The infrastructure is built around VirtualBox version 6. VirtualBox can be obtained from: https://www.virtualbox.org/
