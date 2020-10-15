@@ -2,7 +2,7 @@
 
 in-target /bin/sh -c -- "apt install -y -q vim mc net-tools tcpdump links"
 in-target /bin/sh -c -- "apt install -y -q sudo"
-in-target /bin/sh -c -- "usermod -a -G sudo sysadmin"^
+in-target /bin/sh -c -- "usermod -a -G sudo sysadmin"
 in-target /bin/sh -c -- 'echo XKBMODEL=\"pc105\" > /etc/default/keyboard'
 in-target /bin/sh -c -- 'echo XKBLAYOUT=\"de\" >> /etc/default/keyboard'
 in-target /bin/sh -c -- 'echo XKBVARIANT=\"de_CH\" >> /etc/default/keyboard'
