@@ -8,6 +8,17 @@ The following drawing provides an overview of the virtual infrastructure to be i
 
 ![Network Overview](https://github.com/peterheinrich/ITS-Firewalling-Demo-Environment/blob/main/overview.png)
 
+## General
+
+!!! THE SYSTEMS ARE FOR EXPERIMENTAL PURPOSES ONLY - DO NOT USE THEM IN A REAL SETTING !!!
+
+For all machines, the defautl credentialy are:
+
+Username: sysadmin, Password: abc123
+
+Username: root, Password: abc123
+
+
 ## Windows Users
 You need to add the installation directory of VirtualBox to your path variable. 
 You can use the windows terminal (cmd) to try out VBoxManage. When you enter the command, you should get usage information. If not, your path is not configured correctly.
