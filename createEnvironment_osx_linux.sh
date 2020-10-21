@@ -21,7 +21,7 @@ function CreateVMUnattended() {
 		echo 'Skipping download,'$filePath' already exists'
 	else
 		echo 'Downloading Debian ISO-Image '$debianURL
-		curl -o $filePath $debianURL
+		curl -L -o $filePath $debianURL
 	fi
 
 	# Create and configure the machine
