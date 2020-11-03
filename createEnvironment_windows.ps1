@@ -45,7 +45,7 @@ function CreateVMUnattended {
   Write-Host '=== Attaching disk to SATA interface'
   VBoxManage storageattach $machineName --storagectl SATA --port 0 --device 0 --type hdd --medium "$home\VirtualBox VMs\$machineName\$machineName-SATA0.vdi"
   Write-Host '=== Preparing unattended Debian installation'
-  $tempPath = ([System.IO.Path]::GetTempPath()+'~'+([System.IO.Path]::GetRandomFileName())).Split('.')[0]
+  $tempPath = ([System.IO.Path]::GetTempPath()+'~'+([System.IO.Path]::GetRandomFileName()))
   mkdir $tempPath
   VBoxManage unattended install $machineName --auxiliary-base-path $tempPath/ --user=sysadmin --password=abc123 --country=CH --time-zone=UTC --hostname=$machineName.local --iso=$filePath --package-selection-adjustment=minimal --post-install-template $template
   (Get-Content -Path $tempPath\isolinux-isolinux.cfg) -replace "^default vesa.*","default install" | Set-Content $tempPath\isolinux-isolinux.cfg
