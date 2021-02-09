@@ -12,7 +12,7 @@ The following drawing provides an overview of the virtual infrastructure to be i
 
 !!! THE SYSTEMS ARE FOR EXPERIMENTAL PURPOSES ONLY - DO NOT USE THEM IN A REAL SETTING !!!
 
-For all machines, the defautl credentialy are:
+For all machines, the default credentials are:
 
 Username: sysadmin, Password: abc123
 
