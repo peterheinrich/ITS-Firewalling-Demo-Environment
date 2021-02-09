@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-filePath="debian-10.6.0-amd64-netinst.iso"
-debianURL="https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-10.6.0-amd64-netinst.iso"
+filePath="debian-10.8.0-amd64-netinst.iso"
+debianURL="https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-10.8.0-amd64-netinst.iso"
 
 
 function CreateVMUnattended() {
