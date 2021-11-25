@@ -24,14 +24,11 @@ You need to add the installation directory of VirtualBox to your path variable.
 You can use the windows terminal (cmd) to try out VBoxManage. When you enter the command, you should get usage information. If not, your path is not configured correctly.
 
 Then start the powershell. 
-If you cannot run the script then you probably have to adjust the execution policy of your profile. Just enter:
-```
-$ Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-```
-
+If you cannot run the script then you probably have to adjust the execution policy of your profile.
 Navigate to the directory where you extracted/cloned the files of this repository. Execute the script:
+
 ```
-$ ./createEnvironment_windows.ps1
+$ powershell.exe -ExecutionPolicy Bypass .\createEnvironment_windows.ps1
 ```
 
 ## Linux Users
