@@ -76,22 +76,19 @@ function WaitVMShutdown() {
 
 # Create and install all machines in parallel
 CreateVMUnattended  $filePath  $debianURL  "dc-server"  dc-server-install.sh
-CreateVMUnattended  $filePath  $debianURL  "dc-router"  dc-router-install.sh
-CreateVMUnattended  $filePath  $debianURL  "local-router"  local-router-install.sh
-CreateVMUnattended  $filePath  $debianURL  "local-client"  local-client-install.sh
-CreateVMUnattended  $filePath  $debianURL  "firewall"  firewall-install.sh
-
-# Just for safety ...
-sleep 10
-
-# Wait for all machines to finish installing
 WaitVMShutdown  "dc-server"
+sleep 10
+CreateVMUnattended  $filePath  $debianURL  "dc-router"  dc-router-install.sh
 WaitVMShutdown  "dc-router"
+sleep 10
+CreateVMUnattended  $filePath  $debianURL  "local-router"  local-router-install.sh
 WaitVMShutdown  "local-router"
+sleep 10
+CreateVMUnattended  $filePath  $debianURL  "local-client"  local-client-install.sh
 WaitVMShutdown  "local-client"
+sleep 10
+CreateVMUnattended  $filePath  $debianURL  "firewall"  firewall-install.sh
 WaitVMShutdown  "firewall"
-
-# Just for safety ...
 sleep 10
 
 # Configure our datacenter server
