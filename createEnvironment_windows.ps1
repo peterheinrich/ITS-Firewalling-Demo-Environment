@@ -48,7 +48,7 @@ function CreateVMUnattended {
   $tempPath = ([System.IO.Path]::GetTempPath()+'~'+([System.IO.Path]::GetRandomFileName()))
   mkdir $tempPath
   VBoxManage unattended install $machineName --auxiliary-base-path $tempPath/ --user=sysadmin --password=abc123 --country=CH --time-zone=UTC --hostname=$machineName.local --iso=$filePath --package-selection-adjustment=minimal --post-install-template $template
-  (Get-Content -Path $tempPath\isolinux-isolinux.cfg) -replace "^default vesa.*","default install" | Set-Content $tempPath\isolinux-isolinux.cfg
+  # (Get-Content -Path $tempPath\isolinux-isolinux.cfg) -replace "^default vesa.*","default install" | Set-Content $tempPath\isolinux-isolinux.cfg
   Write-Host '=== Starting vm'
   
   # Engage the unattended installation
