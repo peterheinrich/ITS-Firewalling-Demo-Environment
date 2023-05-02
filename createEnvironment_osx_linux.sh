@@ -45,7 +45,7 @@ function CreateVMUnattended() {
 	echo "TEMPDIR: " $tempPath
 	VBoxManage unattended install $machineName --auxiliary-base-path $tempPath/ --user=sysadmin --password=abc123 --country=CH --time-zone=UTC --hostname=$machineName.local --iso=$filePath --package-selection-adjustment=minimal --post-install-template $template
 	cp $tempPath/isolinux-isolinux.cfg $tempPath/isolinux-isolinux.cfg.orig
-	cat $tempPath/isolinux-isolinux.cfg.orig | sed -e "s/^default vesa.*/default install/g" > $tempPath/isolinux-isolinux.cfg
+	# cat $tempPath/isolinux-isolinux.cfg.orig | sed -e "s/^default vesa.*/default install/g" > $tempPath/isolinux-isolinux.cfg
 
 	echo '=== Starting vm'
 
