@@ -80,22 +80,23 @@ function WaitVMShutdown {
 
 # Create and install all machines in parallel
 CreateVMUnattended -filePath $filePath -debianURL $debianURL -machineName "dc-server" -template dc-server-install.sh
-CreateVMUnattended -filePath $filePath -debianURL $debianURL -machineName "dc-router" -template dc-router-install.sh
-CreateVMUnattended -filePath $filePath -debianURL $debianURL -machineName "local-router" -template local-router-install.sh
-CreateVMUnattended -filePath $filePath -debianURL $debianURL -machineName "local-client" -template local-client-install.sh
-CreateVMUnattended -filePath $filePath -debianURL $debianURL -machineName "firewall" -template firewall-install.sh
-  
-# Just for safety ...
+WaitVMShutdown -machineName "dc-server"
 Start-Sleep -Seconds 10
 
-# Wait for all machines to finish installing
-WaitVMShutdown -machineName "dc-server"
+CreateVMUnattended -filePath $filePath -debianURL $debianURL -machineName "dc-router" -template dc-router-install.sh
 WaitVMShutdown -machineName "dc-router"
+Start-Sleep -Seconds 10
+
+CreateVMUnattended -filePath $filePath -debianURL $debianURL -machineName "local-router" -template local-router-install.sh
 WaitVMShutdown -machineName "local-router"
+Start-Sleep -Seconds 10
+
+CreateVMUnattended -filePath $filePath -debianURL $debianURL -machineName "local-client" -template local-client-install.sh
 WaitVMShutdown -machineName "local-client"
+Start-Sleep -Seconds 10
+
+CreateVMUnattended -filePath $filePath -debianURL $debianURL -machineName "firewall" -template firewall-install.sh
 WaitVMShutdown -machineName "firewall"
-  
-# Just for safety ...
 Start-Sleep -Seconds 10
 
 # Configure our datacenter server
