@@ -34,6 +34,8 @@ function CreateVMUnattended {
   VBoxManage createvm --name $machineName --ostype Debian_64 --register 
   Write-Host '=== Turning ioapic on'
   VBoxManage modifyvm $machineName --ioapic on 
+  Write-Host '=== Enabling dual core CPU'
+  VBoxManage modifyvm $machineName --cpus 2 
   Write-Host '=== Setting memory to 1G for installation'
   VBoxManage modifyvm $machineName --memory 1024 --vram 16 
   Write-Host '=== Adding a NAT network to the machine'
